@@ -570,6 +570,13 @@ public class ListUtils {
     return sum;
   }
 
+  public static double dot(int[] v1, int[] v2) {
+    double sum = 0;
+    for(int i = 0; i < v1.length; i++)
+      sum += v1[i] * v2[i];
+    return sum;
+  }
+
   public static double[] sq(double[] v) {
     double[] newv = new double[v.length];
     for(int i = 0; i < v.length; i++)
@@ -628,6 +635,14 @@ public class ListUtils {
     for(int i = 0; i < v2.length; i++) v[v1.length+i] = v2[i];
     return v;
   }
+
+  public static int[] concat(int[] v1, int[] v2) {
+    int[] v = new int[v1.length+v2.length];
+    for(int i = 0; i < v1.length; i++) v[i] = v1[i];
+    for(int i = 0; i < v2.length; i++) v[v1.length+i] = v2[i];
+    return v;
+  }
+    
   public static <T> T[] concat(T[] v1, T[] v2) {
     T[] v = newArray(v1.length+v2.length, v1.length > 0 ? v1[0] : v2[0]);
     for(int i = 0; i < v1.length; i++) v[i] = v1[i];
